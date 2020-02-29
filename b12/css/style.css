@@ -1,0 +1,88 @@
+* {
+  box-sizing:border-box;
+}
+body {
+  background: #331A4E;
+  font-family: 'Roboto Slab', serif;
+}
+
+.container {
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform:translate(-50%, -50%);  
+  overflow:hidden;  
+  border:10px solid #fff;
+  width:220px;
+  height:220px;
+  cursor:pointer;
+  background:rgba(0,0,0,.3);
+  box-shadow: 0px 0px 0 40px rgba(0,0,0,.1);
+}
+
+.fronticon, .backicon {
+  font-size:60px;
+  line-height:140px;
+  text-align:center;
+  width:200px;
+  height:200px;
+  position:absolute; 
+  color:#fff;
+  text-shadow:2px 2px 7px rgba(0, 0, 0, .7);
+}
+
+.fronticon span, .backicon span {
+  font-size:26px;
+  display: block;
+/*   border:1px solid red; */
+  line-height:30px;
+  margin-top:-30px;
+}
+
+.container > div {
+  position:absolute;
+  width:200px;
+  height:200px;
+  padding:20px;
+  backface-visibility:hidden;
+}
+
+.container > .front {
+  background:#C34837;
+  background-image: radial-gradient(#C34837, #81281b);  
+  transform: perspective(500px) rotateY(0deg);
+  transition: transform 1s ease-out;
+}
+
+.container > .fronticon {
+  transform: perspective(900px) rotateY(0deg);
+  transform-origin:left;  
+  transition: transform .8s ease-out;
+}
+.container:hover > .fronticon {
+  transform: perspective(900px) rotateY(-180deg);   
+}
+
+.container > .backicon{
+  transform: perspective(900px) rotateY(180deg);
+  transform-origin:right;  
+  transition: transform .8s ease-out;
+}
+.container:hover > .backicon {
+  transform: perspective(900px) rotateY(0deg);   
+}
+
+
+.container > .back {
+  background:#186B7F;
+  background-image: radial-gradient(#186B7F, #0d4a58); 
+  transform: perspective(500px) rotateY(180deg);
+  transition: transform 1s ease-out;
+}
+.container:hover > .front {  
+  transform:perspective(500px) rotateY(-180deg);
+}
+.container:hover > .back {
+  transform:perspective(500px) rotateY(0deg);
+}
+

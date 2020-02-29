@@ -1,0 +1,115 @@
+html, :root {
+  --purple: #7f00ff;
+  --pink: #e100ff;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+button {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  position: relative;
+  outline: none;
+  border: none;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 0.75em 1.75em;
+  border-radius: 50px;
+  display: inline-block;
+  color: #fff;
+  background: -webkit-gradient(linear, left top, right top, from(var(--purple)), to(var(--pink)));
+  background: linear-gradient(to right, var(--purple), var(--pink));
+}
+button::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  bottom: -10px;
+  left: 5%;
+  height: 110%;
+  width: 90%;
+  opacity: 0.8;
+  border-radius: 50px;
+  background: inherit;
+  -webkit-filter: blur(6px);
+  -moz-filter: blur(6px);
+  -o-filter: blur(6px);
+  -ms-filter: blur(6px);
+  filter: blur(6px);
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+button:hover::after {
+  -webkit-filter: blur(4px);
+  -moz-filter: blur(4px);
+  -o-filter: blur(4px);
+  -ms-filter: blur(4px);
+  filter: blur(4px);
+  width: 100%;
+  bottom: -5px;
+  left: 0;
+}
+button:hover:active::after {
+  -webkit-filter: blur(10px);
+  -moz-filter: blur(10px);
+  -o-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
+}
+
+@supports (-ms-ime-align: auto) {
+  button::after, button:hover::after, button:active::after {
+    display: none;
+  }
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  button {
+    background: -webkit-gradient(linear, left top, right top, from(#7f00ff), to(#e100ff));
+    background: linear-gradient(to right, #7f00ff, #e100ff);
+  }
+  button::after, button:hover::after, button:active::after {
+    display: none;
+  }
+}
+.gist {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: #282828;
+  color: white;
+  padding: 0.5em;
+  border-radius: 4px;
+  margin: 10px;
+  font-size: 0.75em;
+  font-family: "Roboto", sans-serif;
+}
+
+.shadow-image {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: #282828;
+  color: white;
+  padding: 0.5em;
+  border-radius: 4px;
+  margin: 10px 80px 10px;
+  font-size: 0.75em;
+  font-family: "Roboto", sans-serif;
+}

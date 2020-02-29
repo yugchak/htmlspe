@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 Canvas - Scratch Card</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1">
+
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <!--
+https://github.com/andreruffert/scratchie.js
+-->
+ <div style="margin: 20px auto; text-align: center; margin-bottom: 0px;">
+    <a href="http://www.100sucai.com/" target="_blank"><img src="100sucai.png" alt=""></a>
+</div>
+<div class="container" id="js-container">
+  <canvas class="canvas" id="js-canvas" width="300" height="300"></canvas>
+  <form class="form" style="visibility: hidden;">
+    <h2>'Allo, 'Allo!</h2>
+    <h3>The secret code is:</h3>
+    <h1><code>HlkafSYc</code></h1>
+    <div>
+      <input type="text" name="code" placeholder="Secret Code">
+    </div>
+    <br>
+    <div>
+      <input type="submit" value="Submit">
+    </div>
+  </form>  
+</div>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>

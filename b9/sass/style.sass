@@ -1,0 +1,111 @@
+// MIXINS //
+=gradient
+  background: -webkit-gradient(linear, left top, right top, from(var(--purple)), to(var(--pink)))
+  background: -webkit-linear-gradient(left, var(--purple), var(--pink))
+  background: -o-linear-gradient(left, var(--purple), var(--pink))
+  background: linear-gradient(to right, var(--purple), var(--pink))
+
+=blur($radius)
+  -webkit-filter: $radius
+  -moz-filter: $radius
+  -o-filter: $radius
+  -ms-filter: $radius
+  filter: $radius
+
+=transition($properties)
+  -webkit-transition: $properties
+  -o-transition: $properties
+  transition: $properties
+// END MIXINS //
+
+html, :root
+  --purple: #7f00ff
+  --pink: #e100ff
+
+
+body, html
+  width: 100%
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+
+button
+  font-family: 'Roboto', sans-serif
+  font-size: 16px
+  position: relative
+  outline: none
+  border: none
+  -webkit-appearance: none
+  -webkit-tap-highlight-color: transparent
+  cursor: pointer
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+  user-select: none
+  padding: 0.75em 1.75em
+  border-radius: 50px
+  display: inline-block
+  color: #fff
+  +gradient
+  &::after
+    content: ''
+    position: absolute
+    z-index: -1
+    bottom: -10px
+    left: 5%
+    height: 110%
+    width: 90%
+    opacity: .8
+    border-radius: 50px
+    background: inherit
+    +blur(blur(6px))
+    +transition(all .2s)
+  &:hover
+    &::after
+      +blur(blur(4px))
+      width: 100%
+      bottom: -5px
+      left: 0
+    &:active
+      &::after
+        +blur(blur(10px))
+
+
+// Delete shadow for IE and Edge
+@supports (-ms-ime-align: auto)
+  button
+    &::after, &:hover::after, &:active::after
+      display: none
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+  button
+    // For IE (does not support var) //
+    background: linear-gradient(to right, #7f00ff, #e100ff)
+    &::after, &:hover::after, &:active::after
+      display: none
+
+// Gist + img
+.gist
+  position: fixed
+  bottom: 0
+  right: 0
+  background: #282828
+  color: white
+  padding: .5em
+  border-radius: 4px
+  margin: 10px
+  font-size: .75em
+  font-family: 'Roboto', sans-serif
+
+.shadow-image
+  position: fixed
+  bottom: 0
+  right: 0
+  background: #282828
+  color: white
+  padding: .5em
+  border-radius: 4px
+  margin: 10px 80px 10px
+  font-size: .75em
+  font-family: 'Roboto', sans-serif

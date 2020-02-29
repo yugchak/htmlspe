@@ -1,0 +1,60 @@
+.btn{
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  margin: 0 0 0 50px;
+  border-radius: 50px;
+  line-height: 60px;
+  text-align: center;
+  color: white;
+  font-size: 16px;
+  width: 180px;
+  height: 60px;
+}
+
+.btn2{
+  position: absolute;
+  top: 100px;
+  left: 350px;
+  display:inline-block;
+  margin: 0 0 0 50px;
+  width: 180px;
+  height: 60px;
+  border-radius:50px;
+  border: 1px solid #fff;
+  padding: 8px 0 0 8px;
+}
+
+.btn3{
+  position: absolute;
+  top: 8px;
+  left:8px;
+  z-index: 2;
+  line-height: 50px;
+  text-align: center;
+  font-size: 18px;
+  width: 170px;
+  height: 50px;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+
+
+.btn4{
+  background-color: white;
+  position: absolute;
+  top: 4px;
+  left:4px;
+  z-index: 1;
+  margin: 0;
+  width: 180px;
+  height: 60px;
+  border-radius: 50px;
+}
+.father{
+  position:relative;
+  height: 100vh;
+  width: 100vw;
+}
